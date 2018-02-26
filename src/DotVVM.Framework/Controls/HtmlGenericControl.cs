@@ -210,8 +210,11 @@ namespace DotVVM.Framework.Controls
 
                 try
                 {
-                    var value = GetValue(styleProperty).ToString();
-                    writer.AddStyleAttribute(styleProperty.GroupMemberName, value);
+                    var value = GetValue(styleProperty)?.ToString();
+                    if (!string.IsNullOrEmpty(value))
+                    {
+                        writer.AddStyleAttribute(styleProperty.GroupMemberName, value.ToString());
+                    }
                 }
                 catch { }
             }
