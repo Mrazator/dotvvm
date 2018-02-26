@@ -34,10 +34,12 @@ namespace DotVVM.Samples.New.Tests.Feature
                 var widthInc = browser.Single("[data-ui='width-inc']");
                 var widthDec = browser.Single("[data-ui='width-dec']");
                 Assert.Equal("50px", div.WebElement.GetCssValue("width"));
+                Assert.Equal(greenColor, div.WebElement.GetCssValue("background-color"));
                 widthInc.Click().Click();
                 Assert.Equal("70px", div.WebElement.GetCssValue("width"));
                 widthDec.Click();
                 Assert.Equal("60px", div.WebElement.GetCssValue("width"));
+                Assert.Equal(greenColor, div.WebElement.GetCssValue("background-color"));
 
                 var span = browser.Single("[data-ui='span-color']");
                 var setColorToGreen = browser.Single("[data-ui='set-color-green']");

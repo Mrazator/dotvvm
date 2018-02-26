@@ -211,7 +211,7 @@ namespace DotVVM.Framework.Controls
                 try
                 {
                     var value = GetValue(styleProperty).ToString();
-                    writer.AddAttribute("style", $"{styleProperty.GroupMemberName}: {value};", append: true, appendSeparator: " ");
+                    writer.AddStyleAttribute(styleProperty.GroupMemberName, value);
                 }
                 catch { }
             }
